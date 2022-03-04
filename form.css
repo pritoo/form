@@ -1,0 +1,19 @@
+.card-form{
+    justify-content: center;
+    align-content: center;
+    margin: 15% 35%;
+}
+.card-input{
+    width: -webkit-fill-available;
+    border-radius: 10px;
+}
+.card-button{
+    border-radius: 20px;    
+    margin-left:30%
+}
+#center{
+    text-align: center;
+}
+.card-btn{
+    display: flex;
+}
