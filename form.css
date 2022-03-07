@@ -1,10 +1,17 @@
+.body-img{
+background: url(./images/background.jpg) no-repeat;
+}
+.form-color{
+    background-color: darkgray;
+}
 .card-form{
     justify-content: center;
     align-content: center;
     margin: 15% 35%;
+  
 }
 .card-input{
-    width: -webkit-fill-available;
+    width: 85%;
     border-radius: 10px;
 }
 .card-button{
@@ -22,4 +29,8 @@
 }
 .card-minus{
 position:absolute;
+}
+.text-interst{
+    width: 76%;
+    border-radius: 10px;
 }
