@@ -1,5 +1,5 @@
 .body-img{
-background: url(background.jpg) no-repeat;
+background: url(./images/background.jpg) no-repeat;
 }
 .form-color{
     background-color: darkgray;
@@ -14,9 +14,12 @@ background: url(background.jpg) no-repeat;
     width: 85%;
     border-radius: 10px;
 }
-.card-button{
-    border-radius: 20px;    
-    margin-left:30%
+.card-button{  
+    margin-left:30%;
+}
+.signup{
+    border-radius: 20px;
+    height:35px;
 }
 #center{
     text-align: center;
