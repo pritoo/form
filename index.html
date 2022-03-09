@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="form.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>signup</title>
 
     <script>
@@ -41,18 +42,33 @@
         var count=1;
         function add(){
             count+=1
-          html =`<div class=" card-btn" id="row `+count+`"><div class="mb-3" id="decrement">
-                <input type="text" class="card-text text-interst"  placeholder="interst" name="interst `+count+`" >
+            if(count == 1){
+               
+                html =`<div class="row" id="row `+count+`"><div class="mb-3 card-plus" id="decrement"><input type="text" class="card-text text-interst"  placeholder="interst" name="interst_`+count+`" >
                 <button onclick="add()">+</button> <button  onclick="remove()">-</button></div>
             </div>`
+           
+            }else{
+                $('#addMinus').html('<button class="card-minus minus" id="minus" >-</button>');
+                html =`<div class="card-btn" id="row `+count+`"><div class="mb-3 card-plus" id="decrement">
+                <input type="text" class="card-text text-interst"  placeholder="interst" name="interst_`+count+`">
+                <button onclick="add()">+</button> <button  onclick="remove()">-</button></div>
+            </div>`
+            }
+         
             var input =document.getElementById('input_text')
-            
-            input.innerHTML+=html;
+             input.innerHTML+=html;
         }
 
         function remove() {
+           
           var obj = document.getElementById("decrement");
+          if(count ==2){
+                $('#addMinus').html(''); 
+            }
             obj.remove();
+            count--
+            
             //console.log(conut--)
 
         }
@@ -61,7 +77,7 @@
     
 </head>
 <body class="body-img">
-    <!-- <form name="myform" method="post" onsubmit="validateform()"> -->
+<!-- <form name="myform" method="post">  -->
     <div class="card w-25 card-form " > 
      
         <div class="card-body form-color">
@@ -72,7 +88,7 @@
                 <input type="name" class="card-text card-input "  placeholder="Username" id="username">
             </div>
             <div class="mb-3">
-                <input type="email" class="card-text card-input"  placeholder="E-mail" id="email">
+                <input type="email" class="card-text card-input"  placeholder="E-mail" id="email" >
             </div>
             <div class="mb-3">
             <input type="password" class="card-text card-input" placeholder="Password" id="password">
@@ -82,12 +98,12 @@
             </div>
             <div class="mb-3 row " >
                 <div id="input_text" class="card-plus" > 
-                    <input type="text" class="card-text text-interst "  placeholder="interst" id="input_text">
+                    <input type="text" class="card-text text-interst"  placeholder="interst" id="input_text" name="interst_1">
                     <button class="card-minus" id="increment" onclick="add()" >+</button>
+                    <span id="addMinus"></span>
+                    <!-- <button class="card-minus minus" id="minus" >-</button> -->
                 </div>
-            <!-- <div>
-                <button class="card-minus" id="minus" >-</button> 
-            </div> -->
+                 
             </div>
             <button type="submit" class="btn-dark card-button signup" onclick="validateform()" >Signup</button>
 
@@ -99,7 +115,7 @@
             <span><a href="#">Forgot password?</a></span>
           </div>
     </div>
-<!-- </form> -->
+ <!-- </form> -->
     
     
 </body>
