@@ -37,3 +37,7 @@ position:absolute;
     width: 76%;
     border-radius: 10px;
 }
+.minus{
+    position: absolute;
+    right:30px
+}
